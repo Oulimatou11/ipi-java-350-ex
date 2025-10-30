@@ -65,7 +65,7 @@ public class Employe {
             case THURSDAY: if(d.isLeapYear()) valeur =  valeur + 1; break;
             case FRIDAY: if(d.isLeapYear()) valeur =  valeur + 2; else valeur =  valeur + 1;break;
             case SATURDAY: valeur = valeur + 1; break;
-            default: valeur = valeur; break;
+            default: break;
         }
         int monInt = (int) Entreprise.joursFeries(d).stream().filter(localDate -> localDate.getDayOfWeek().getValue() <= DayOfWeek.FRIDAY.getValue()).count();
         return (int) Math.ceil((i1 - Entreprise.NB_JOURS_MAX_FORFAIT - var - Entreprise.NB_CONGES_BASE - monInt) * tempsPartiel);
